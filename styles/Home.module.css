@@ -6,6 +6,17 @@
   align-items: center;
   padding: 0 20px;
   background-color: #191D32;
+  min-height: 100vh;
+}
+
+.loginCont{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #9CFC97;
+  padding: 40px;
+  border-radius: 10px 10px 0 10px;
+  margin-top: 70px;
 }
 
 .description {
@@ -387,6 +398,11 @@
   font-size: 16px;
   cursor: pointer;
   font-family: 'Karla', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.commentButton:hover {
+  background-color: #004f59;
 }
 
 .commentList {

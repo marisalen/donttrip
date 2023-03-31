@@ -1,6 +1,7 @@
 import { useSession, signIn, signOut } from "next-auth/react"
 import { getServerSession, unstable_getServerSession } from "next-auth/next";
 import { authOptions } from "./api/auth/[...nextauth]";
+import styles from '@/styles/Home.module.css'
 
 export default function Component() {
   const { data: session } = useSession()
@@ -8,17 +9,25 @@ export default function Component() {
   if (session) {
     return (
       <>
+      <div className={styles.main}>
         Signed in as {session.user.email} <br />
         <img src={session.user.image} /> <br />
         {session.user.name} <br />
-        <button onClick={() => signOut()}>Sign out</button>
+        <button onClick={() => signOut()}>Sign out</button>     
+      </div>
       </>
     )
   }
   return (
     <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
+    <div className={styles.main}>
+      <div className={styles.loginCont}>
+        <img src="logo.png"/>
+      <h1>Welcome to Don't Trip</h1>
+      <p className={styles.slogan}>You are not signed in yet <br /></p>
+      <button className={styles.commentButton} onClick={() => signIn()}>Sign in</button>
+      </div>
+    </div>
     </>
   )
 }
