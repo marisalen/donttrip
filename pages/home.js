@@ -78,7 +78,7 @@ export default function Home() {
           <form onSubmit={handleSubmit} className={styles.formContainer}>
             <label>
               Trip Title:
-              <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+              <input type="text" placeholder='enter your trip name' value={title} onChange={(e) => setTitle(e.target.value)} />
             </label>
             <label>
               Location:
